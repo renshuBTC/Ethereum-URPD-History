@@ -1,0 +1,6 @@
+# Built site and downloaded or generated data: never committed (the deploy workflow builds them)
+dist/
+node_modules/
+*.bin
+*.bin.gz
+prices.json

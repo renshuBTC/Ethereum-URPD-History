@@ -1,0 +1,38 @@
+name: Site check
+on:
+  schedule:
+    - cron: "47 4,10,16,22 * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      SITE: https://www.ethereumurpd.com/
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: The live site is this repository's files
+        run: |
+          files="index.html privacy.html terms.html favicon.svg data/youtube.json vendor/plotly-2.27.0.min.js fonts/source-code-pro-latin-400-normal.woff2 fonts/source-code-pro-latin-700-normal.woff2"
+          for _ in $(seq 1 8); do
+            git fetch -q --depth=1 origin main || { sleep 90; continue; }
+            differ=""
+            for f in $files; do
+              url="$SITE$([ "$f" = index.html ] || echo "$f")?check=$(date +%s)"
+              if ! curl -fsS --proto '=https' --tlsv1.2 --max-time 60 -o "$RUNNER_TEMP/live" "$url" || ! git show "FETCH_HEAD:$f" | cmp -s - "$RUNNER_TEMP/live"; then
+                differ="$differ $f"
+              fi
+            done
+            if [ -z "$differ" ]; then echo "The live site is $files as of $(git rev-parse --short FETCH_HEAD)."; exit 0; fi
+            sleep 90
+          done
+          if [ -z "${differ+x}" ]; then echo "::error::could not fetch main to compare with"; exit 1; fi
+          echo "::error::$SITE is not serving this repository's$differ"
+          for f in $differ; do
+            curl -sS --max-time 60 "$SITE$([ "$f" = index.html ] || echo "$f")" | diff <(git show "FETCH_HEAD:$f") - | head -20 || true
+          done
+          exit 1

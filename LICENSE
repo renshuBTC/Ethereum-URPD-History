@@ -1,0 +1,9 @@
+Copyright (c) 2026 renshuBTC. All rights reserved.
+
+No license is granted to copy, modify or distribute the files in this repository, except for the third-party files,
+which keep their own licenses:
+
+  vendor/plotly-2.27.0.min.js   Plotly.js, MIT License (vendor/LICENSE-plotly.txt)
+  fonts/*.woff2                 Source Code Pro, SIL Open Font License 1.1 (fonts/OFL.txt)
+
+The data shown on the site belongs to its providers (ethPandaOps Xatu and Coin Metrics).

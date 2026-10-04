@@ -1,0 +1,15 @@
+{
+  "about": "The full-history videos on YouTube for the site's four video buttons, one for each weighting and colouring: usd-age and eth-age (% USD and % ETH, by age band) and usd-lthsth and eth-lthsth (by short- and long-term holders), each {\"id\": the 11-character YouTube video id}. null until a video is viewable; the buttons then open the channel.",
+  "usd-age": {
+    "id": "72hzq1Ie9Vg"
+  },
+  "eth-age": {
+    "id": "x2i9EYhwEzk"
+  },
+  "usd-lthsth": {
+    "id": "8YucSn_7p40"
+  },
+  "eth-lthsth": {
+    "id": "jMrgk_dKY-8"
+  }
+}
