@@ -43,10 +43,13 @@ The site is updated every day with the latest complete UTC day.
 - **Staked ETH, counted once.** ETH staked on the beacon chain is treated like any other balance: deposits come in as
   lots, withdrawals spend the oldest staked lots first, and the beacon chain's rewards come in as new lots on the day
   they are earned, so every day's bars add up to ETH's supply (Coin Metrics').
-- **Prices.** Coin Metrics' daily closes. $0 for the genesis allocation and for ETH last moved before 8 August 2015,
-  the first day with a close.
-- **Binning.** 625 equal-width bars from $0 to 0.1% past the highest close so far, each price spread by a Gaussian of
-  0.24% of the price; total supply and value are kept exactly.
+- **Prices.** Every coin carries the price when it last moved: Coin Metrics' daily closes, joined by a straight line
+  through each day (from the day's open, the close the day before, to its close), at the moment it moved (to the 45
+  minutes). $0 for the genesis allocation and for ETH last moved before 8 August 2015, the first day with a close.
+- **Binning.** 625 equal-width bars from $0 to 0.1% past the highest close so far. Each day is cut into as few parts
+  as keep ETH's move within each part to 0.5% of the price (up to 32); the coins of each part are spread over the
+  prices that part of the day ran through, then blurred by a Gaussian of 0.24% of the price; total supply and value
+  are kept exactly.
 
 ## This repository
 
