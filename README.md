@@ -12,9 +12,9 @@ price.
 
 - **% USD or % ETH.** Each price bucket's share of the day: of the realized value (every coin's value when it last
   moved, added up) or of the ETH supply. A day's bars add up to 100%.
-- **LTH/STH or AGE.** Short- and long-term holders at Ethereum's own boundary of 124 days, worked out from its history
-  with Glassnode's method, with Glassnode's logistic weight 10 days wide (half long-term held at 124 days, 90% at 146);
-  or 23 age bands, from under an hour to over 15 years.
+- **LTH/STH or AGE.** Short- and long-term holders at Ethereum's own boundary of 132 days, worked out from its whole
+  history with Glassnode's method, with Glassnode's logistic weight 10 days wide (half long-term held at 132 days, 90% at
+  154); or 23 age bands, from under an hour to over 15 years.
 - **Supply in profit and in loss** at the day's ETH price, and a bottom signal when at least 90% of the value
   (% USD) or 70% of the coins (% ETH) is in loss; both thresholds can be changed in the toolbar.
 - **ETH's price** as a line of daily closes, with past cycle tops and bottoms marked.

@@ -1,207 +1,49 @@
 {
- "about": "Ethereum's long-term holder boundary in days, worked out from its own history with Glassnode's method (the share of lots of each age spent within 7, 14, 30, 60, 90 and 120 days; see the page's explainer), and the width of the logistic weight around it. The site reads boundary and width.",
+ "about": "Ethereum's long-term holder boundary in days, worked out from its own history with Glassnode's method (the share of lots of each age spent within 7, 14, 30, 60, 90 and 120 days; on each curve, the last age within the first year whose slope is steeper than any past a year; the median of the six), and the width of the logistic weight around it. The site reads boundary and width.",
  "coin": "ETH",
- "method": "Glassnode (Schultze-Kraft 2020; Heeg & Schultze-Kraft 2020)",
+ "method": "Glassnode (Schultze-Kraft 2020): the last age within the first year whose spend curve falls more steeply than at any age past a year, by lots, each slope by least squares over the 15 days around its age; Glassnode's weight (Heeg & Schultze-Kraft 2020)",
  "width": 10,
  "first": "2015-07-30",
- "last": "2026-09-30",
- "days": 4081,
- "basis": "per lot (the share of lots spent), over 2018-05-25 to 2026-09-30",
- "boundary": 124,
- "weight": "w(a) = 1 / (1 + exp(-(a - 124) / 10))",
+ "last": "2026-10-05",
+ "days": 4086,
+ "basis": "Glassnode's rule on 6 of the 6 windows (the median of their boundaries), per lot, over the whole history (2015-07-30 to 2026-10-05)",
+ "rule": true,
+ "boundary": 132,
+ "weight": "w(a) = 1 / (1 + exp(-(a - 132) / 10))",
  "at": {
-  "half": 124,
-  "ninety": 146
+  "half": 132,
+  "ninety": 154
  },
- "agree": false,
  "windows": {
   "7": {
-   "boundary": 77,
-   "oldSlope": 0.00024347113503533061,
-   "byHalfWidth": {
-    "3": 62,
-    "7": 77,
-    "14": 105
-   },
-   "maxAge": 3708
+   "boundary": 78,
+   "steepestPastSlope": 0.00023454702921693246,
+   "agesPastAYear": 3677
   },
   "14": {
-   "boundary": 94,
-   "oldSlope": 0.0003820964211282834,
-   "byHalfWidth": {
-    "3": 91,
-    "7": 94,
-    "14": 104
-   },
-   "maxAge": 3701
+   "boundary": 95,
+   "steepestPastSlope": 0.00037750328199088546,
+   "agesPastAYear": 3670
   },
   "30": {
-   "boundary": 106,
-   "oldSlope": 0.0004052353426862153,
-   "byHalfWidth": {
-    "3": 104,
-    "7": 106,
-    "14": 146
-   },
-   "maxAge": 3685
+   "boundary": 123,
+   "steepestPastSlope": 0.00040292414269068797,
+   "agesPastAYear": 3654
   },
   "60": {
-   "boundary": 142,
-   "oldSlope": 0.00046152321813938864,
-   "byHalfWidth": {
-    "3": 127,
-    "7": 142,
-    "14": 166
-   },
-   "maxAge": 3655
+   "boundary": 141,
+   "steepestPastSlope": 0.0004680578430284949,
+   "agesPastAYear": 3624
   },
   "90": {
    "boundary": 158,
-   "oldSlope": 0.00047332612444192604,
-   "byHalfWidth": {
-    "3": 139,
-    "7": 158,
-    "14": 239
-   },
-   "maxAge": 3625
+   "steepestPastSlope": 0.0004755677029853566,
+   "agesPastAYear": 3594
   },
   "120": {
    "boundary": 179,
-   "oldSlope": 0.0004494834983703792,
-   "byHalfWidth": {
-    "3": 167,
-    "7": 179,
-    "14": 266
-   },
-   "maxAge": 3595
-  }
- },
- "byLots": {
-  "windows": {
-   "7": {
-    "boundary": 77,
-    "oldSlope": 0.00024347113503533061,
-    "byHalfWidth": {
-     "3": 62,
-     "7": 77,
-     "14": 105
-    },
-    "maxAge": 3708
-   },
-   "14": {
-    "boundary": 94,
-    "oldSlope": 0.0003820964211282834,
-    "byHalfWidth": {
-     "3": 91,
-     "7": 94,
-     "14": 104
-    },
-    "maxAge": 3701
-   },
-   "30": {
-    "boundary": 106,
-    "oldSlope": 0.0004052353426862153,
-    "byHalfWidth": {
-     "3": 104,
-     "7": 106,
-     "14": 146
-    },
-    "maxAge": 3685
-   },
-   "60": {
-    "boundary": 142,
-    "oldSlope": 0.00046152321813938864,
-    "byHalfWidth": {
-     "3": 127,
-     "7": 142,
-     "14": 166
-    },
-    "maxAge": 3655
-   },
-   "90": {
-    "boundary": 158,
-    "oldSlope": 0.00047332612444192604,
-    "byHalfWidth": {
-     "3": 139,
-     "7": 158,
-     "14": 239
-    },
-    "maxAge": 3625
-   },
-   "120": {
-    "boundary": 179,
-    "oldSlope": 0.0004494834983703792,
-    "byHalfWidth": {
-     "3": 167,
-     "7": 179,
-     "14": 266
-    },
-    "maxAge": 3595
-   }
-  }
- },
- "byAmount": {
-  "windows": {
-   "7": {
-    "boundary": 39,
-    "oldSlope": 0.0037519291070293548,
-    "byHalfWidth": {
-     "3": 6,
-     "7": 39,
-     "14": 46
-    },
-    "maxAge": 3708
-   },
-   "14": {
-    "boundary": 39,
-    "oldSlope": 0.004660742561230845,
-    "byHalfWidth": {
-     "3": 31,
-     "7": 39,
-     "14": 44
-    },
-    "maxAge": 3701
-   },
-   "30": {
-    "boundary": 39,
-    "oldSlope": 0.005000330576285272,
-    "byHalfWidth": {
-     "3": 31,
-     "7": 39,
-     "14": 45
-    },
-    "maxAge": 3685
-   },
-   "60": {
-    "boundary": 39,
-    "oldSlope": 0.004921174542740205,
-    "byHalfWidth": {
-     "3": 30,
-     "7": 39,
-     "14": 47
-    },
-    "maxAge": 3655
-   },
-   "90": {
-    "boundary": 40,
-    "oldSlope": 0.004623296670962148,
-    "byHalfWidth": {
-     "3": 31,
-     "7": 40,
-     "14": 52
-    },
-    "maxAge": 3625
-   },
-   "120": {
-    "boundary": 38,
-    "oldSlope": 0.004901588404361627,
-    "byHalfWidth": {
-     "3": 30,
-     "7": 38,
-     "14": 46
-    },
-    "maxAge": 3595
-   }
+   "steepestPastSlope": 0.0004612313608031735,
+   "agesPastAYear": 3564
   }
  }
 }
