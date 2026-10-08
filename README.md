@@ -20,7 +20,7 @@ price.
 - **ETH's price** as a line of daily closes, with past cycle tops and bottoms marked.
 - **An explainer** of how to read the chart, in English, Chinese and Japanese.
 - **Four full-history videos** on YouTube, one for each weighting and colouring (% USD or % ETH, LTH/STH or AGE):
-  5 minutes each, 4K at 60 frames a second. The video buttons in the toolbar open them.
+  5 minutes each, 4K at 60 frames a second. FULL HISTORY VIDEOS in the toolbar opens a menu of them.
 
 ## Scrubbing through history
 
